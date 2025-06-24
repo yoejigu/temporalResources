@@ -1,0 +1,24 @@
+name: temporalResources
+description: A minimal TypeScript Pulumi program
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: typescript
+packages:
+  temporalcloud:
+    source: terraform-provider
+    version: 0.11.0
+    parameters:
+      - temporalio/temporalcloud
+template:
+  config:
+    tmprl:region:
+      description: Region to create the Temporal Namespace into
+      default: "aws-us-east-1"
+    tmprl:name:
+      description: The name of the Temporal Namespace
+      default: "juneworkshop"
