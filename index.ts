@@ -9,3 +9,4 @@ const workshopNamespace = new temporalcloud.Namespace("workshopNamespace", {
     name: "juneworkshop"
 })
 
+export const webAddress = workshopNamespace.endpoints.webAddress;
